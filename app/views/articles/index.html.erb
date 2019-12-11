@@ -6,6 +6,9 @@
   <% @articles.each do |article| %>
     <li>
       <h2><%= link_to article.title, article_path(article) %></h2>
+      <p>
+        <%= link_to "Edit(#{article.id})", edit_article_path(article) %>
+      </p>
     </li>
   <% end %>
 </ol>
