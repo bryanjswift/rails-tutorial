@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# ArticlesController manages the actions for the `/articles` routes.
 class ArticlesController < ApplicationController
   def new; end
 
@@ -7,6 +8,10 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     @article.save
     redirect_to @article
+  end
+
+  def index
+    @articles = Article.all
   end
 
   def show
