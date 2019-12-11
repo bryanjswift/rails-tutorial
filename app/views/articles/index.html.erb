@@ -5,11 +5,7 @@
 <ol>
   <% @articles.each do |article| %>
     <li>
-      <h2><%= article.title %></h2>
-      <p><%= article.text %></p>
-      <p>
-        <%= link_to 'Show', article_path(article) %>
-      </p>
+      <h2><%= link_to article.title, article_path(article) %></h2>
     </li>
   <% end %>
 </ol>
