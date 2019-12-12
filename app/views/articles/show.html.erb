@@ -6,6 +6,14 @@
   <strong>Text:</strong>
   <%= @article.text %>
 </p>
+
+<% if !@article.comments.empty? %>
+  <%= render 'articles/comments', comments: @article.comments %>
+<% end %>
+
+<h2>Add a Comment</h2>
+<%= render 'comments/form' %>
+
 <p>
   <%= link_to 'Edit this Article', edit_article_path(@article) %>
 </p>
